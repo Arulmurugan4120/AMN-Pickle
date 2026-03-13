@@ -93,9 +93,9 @@ RAZORPAY_KEY_ID=your_razorpay_key_id
 RAZORPAY_KEY_SECRET=your_razorpay_key_secret
 RAZORPAY_WEBHOOK_SECRET=your_webhook_secret
 JWT_SECRET=your_long_random_jwt_secret
-ADMIN_CODE=ADMIN2024
-USER_RESET_CODE=USERRESET2024
-ADMIN_RESET_CODE=ADMINRESET2024
+ADMIN_CODE=ADMIN2026
+USER_RESET_CODE=USERRESET2026
+ADMIN_RESET_CODE=ADMIN2026
 NODE_ENV=development
 ```
 
@@ -114,7 +114,7 @@ npm run dev
 
 To access the Admin Dashboard, you must first register an administrator account:
 1. Navigate to the Signup page and select the "Admin" role.
-2. Enter the ADMIN_CODE (default: ADMIN2024) to authorize the registration.
+2. Enter the ADMIN_CODE (default: ADMIN2026) to authorize the registration.
 3. Once registered, log in to access the management panel at /admin.
 
 ---
