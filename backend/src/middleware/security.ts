@@ -8,8 +8,18 @@ import { Express } from 'express';
  * Applies Helmet, Rate Limiting, and CORS to the express application.
  */
 export const applySecurityMiddleware = (app: Express) => {
-  // 1. HTTP Security Headers
-  app.use(helmet());
+  // 1. HTTP Security Headers with CSP for Razorpay
+  app.use(helmet({
+    contentSecurityPolicy: {
+      directives: {
+        ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+        "script-src": ["'self'", "'unsafe-inline'", "https://checkout.razorpay.com"],
+        "frame-src": ["'self'", "https://api.razorpay.com", "https://tds.razorpay.com"],
+        "connect-src": ["'self'", "https://api.razorpay.com"],
+        "img-src": ["'self'", "data:", "https://*.razorpay.com"],
+      },
+    },
+  }));
 
   // 2. CORS Configuration
   app.use(cors({
